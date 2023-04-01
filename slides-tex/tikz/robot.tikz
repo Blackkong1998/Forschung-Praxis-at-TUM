@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+	% nodes
+	\begin{pgfonlayer}{nodelayer}
+		\node (roboHead) {
+			\input{tikz/robot_head.tikz}
+		};	
+		\node[robotRec, minimum height=40pt, below=1pt of roboHead, anchor=north](body){\Large\RobotName};
+		%feet
+		\node[robotRec, minimum width=30pt, rounded corners=4pt, minimum height=10pt, below left = 2pt and -12pt of body, anchor=north](footL){};
+		\node[robotRec, minimum width=30pt, rounded corners=4pt, minimum height=10pt, below right = 2pt and -12pt of body,anchor=north](footR){};
+		\node[robotRec, minimum width=10pt, rounded corners=4pt, minimum height=30pt, below left = 2.5pt and -5pt of body.north west,anchor=north,rotate=-40](armL){};
+		\node[robotRec, minimum width=10pt, rounded corners=4pt, minimum height=30pt, below right = 2pt and -1pt of body.north east,anchor=north](armR){};
+	\end{pgfonlayer}
+	
+	% nodes in background 
+	\begin{pgfonlayer}{background}	
+		\node[robotRec, minimum width=15pt, rounded corners=2pt, minimum height=20pt, above=10pt of roboHead.south, anchor=north](neck){};
+		\node[robotRec, minimum width=15pt, rounded corners=2pt, minimum height=20pt, above=10pt of footL.north, 	anchor=north](legL){};
+		\node[robotRec, minimum width=15pt, rounded corners=2pt, minimum height=20pt, above=10pt of footR.north, anchor=north](legR){};
+	\end{pgfonlayer}
+	
+	% coordinates
+	\coordinate (handLCon)  at ($(armL.south)+(0pt,-9pt)$);
+	\coordinate (handRCon)  at ($(armR.south)+(8pt,-8pt)$);
+		
+	% edges
+	\begin{pgfonlayer}{foreground}
+		\draw[line width=3pt,line cap=round] (handLCon) arc[draw, start angle=-40, end angle=145, x radius=8pt, y radius=8pt];
+		\draw[line width=3pt,line cap=round] (handRCon) arc[draw, start angle=0, end angle=180, x radius=8pt, y radius=8pt];
+	\end{pgfonlayer}
+\end{tikzpicture}

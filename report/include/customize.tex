@@ -1,0 +1,30 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CUSTOMIZING Tex-File for students to be adjusted as needed %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+% CUSTOM PACKAGES	%
+%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+% \usepackage{IEEEtrantools}
+
+%%%%%%%%%%%%%%%%%%%%%
+% CUSTOM COMMANDS	%
+%%%%%%%%%%%%%%%%%%%%%
+% e.g. Math conventions as vectors, Matrices, sets
+\renewcommand{\vec}[1]{\mathbf{\MakeLowercase{#1}}}
+\newcommand{\Mat}[1]{\mathbf{\MakeUppercase{#1}}}
+\newcommand{\set}[1]{\boldsymbol{#1}}
+
+% e.g. use differenc layers in tikz
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{nodelayer}
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,edgelayer,nodelayer,main,foreground}
+%%%%%%%%%%%%%%%%%%%%%
+% HYPHENATIONS 		%
+%%%%%%%%%%%%%%%%%%%%%
+\hyphenation{Lya-pu-nov}
+

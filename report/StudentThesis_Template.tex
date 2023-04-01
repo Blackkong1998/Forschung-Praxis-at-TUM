@@ -1,0 +1,174 @@
+\documentclass[LSR,MA,english,intermediate, tutorial]{LSR_thesis} 
+\graphicspath{{pics/}}
+
+%% Options:
+%% LSR: LSR Template with Prof. Buss as default
+%% ITR: ITR Template with Prof. Hirche as default
+
+%% BA: Bachelorarbeit / Bachelor thesis
+%% MA: Masterarbeit / Master thesis
+%% HS: Hauptseminar / Scientific seminar
+%% PP: Projektpraktikum / practical course
+%% IP: Ingenieurpraxis
+%% FP: Forschungspraxis
+%% SeA: Semesterarbeit (MW)
+
+%% english
+%% german
+
+%% final
+%% intermediate
+
+%% tutorial -> remove flag such that help files and todos are removed
+
+%%% last changes: 11.03.2020 (tim.bruedigam@tum.de)
+
+%------------------------------------------------%
+%_________CUSTOMIZE LATEX ONLY IN customize.tex!_% 
+%_________ DO NOT MODIFY THE TEMPLATE!___________%
+%________________________________________________%
+% add customize first so you can access your commands in gloss, or fuse both into one file
+\input{./include/customize.tex} % add custom commands etc in this file 
+\input{./include/gloss.tex}		% add your glossary in this file 
+
+
+%_______Start_Document______________________________________
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% title page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% for an english theis. The title:
+\title{Please add your Title here!}
+%% Für deutsche Arbeiten: Deutscher Titel:
+%\title{Die Antwort auf Alles und Mehr - Ein Trauerspiel in 4 Akten}
+% and English translation (optional)
+\titletranslation{
+%Die Verwendung eines Deutschen Untertitels obliegt der Verantwortung der entsprechenden Betreuer
+}
+% data about YOU!:
+\student{Don Knuth} 			%% your name
+\studtitle{cand.~ing.} 			%% Bachelor of Arts, Dr.~phil, etc.
+\street{Bakerstreet 221B}			%% your address
+\city{8xxxy Munich}								%		"
+\phone{089 - 1234567}			%% your telephone-no.
+
+%% if more students are involved (e.g. PP) 
+%--the following parted is not tested ---
+% please report bugs to v.gabler@tum.de 
+%\studenttwo{Zweiter Student}
+%\studtitletwo{} 
+%\studentthree{} 
+%\studtitlethree{} 
+%\studentfour{} 
+%\studtitlefour{} 
+%-----------------------------------------
+\supervisor{Add your supervisor}			%% your supervisor
+\finalrep{XX.XX.2021}						%% final presentation / date
+
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\cleardoublepage
+\ifLSRITRtutorial
+		\phantom{u}
+		\phantom{1}\vspace{6cm}
+	\begin{center}
+		\add[inline]{In your final hardback copy, replace this page with the signed exercise sheet.}
+		\vspace{3cm}
+		\add[inline]{!! If you delete this page, make sure that the page structure is maintained !!
+		
+		(when printed, (even) page numbers on \textit{left pages} must be on the left side, (odd) page numbers on \textit{right pages} on the right side}
+		\vspace{3cm}
+		\todo[inline,color=red!70]{Before modifying this document, READ THE INSTRUCTIONS AND GUIDELINES!
+		
+		(remove \textit{tutorial} flag in the first line of this file to remove template tutorial parts)}
+	\end{center}
+\else
+	% in case you want to add the PDF directly add the task description in the include directory
+	\includepdf[pages=1]{./include/task_desc.pdf}
+\fi
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\topmargin5mm
+\textheight220mm
+\pagenumbering{arabic}
+\phantom{u}
+\begin{abstract}
+  A short (1--3 paragraphs) summary of the work. Should state the problem, major assumptions, basic idea of solution, results. Avoid non--standard terms and acronyms. The abstract must be able to be read completely on its own, detached from any other work (e.g., in collections of paper abstracts). Do not use references in an abstract.
+%\begin{center}	
+%\normalsize \textbf{Zusammenfassung}\\
+%\end{center}
+%Hier die deutschsprachige Zusammenfassung. 
+%\optional{Talk to your supervisor if this is needed and/or wanted before starting with your thesis}
+\end{abstract}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%% Widmung %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\phantom{u}
+\phantom{1}\vspace{6cm}
+\begin{center}
+%Hier die Widmung oder leer lassen
+\end{center}
+
+\pagestyle{fancy}
+
+%%%%%%%%%%%%%%%%%%%Inhaltsverzeichnis%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ACTUAL CONTENT OF YOUR WORK %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% Kapitel - externe Dateien zur Ordnung%%%%%%%%%%%%%
+\ifLSRITRtutorial
+	\input{./chapters/Tutorial.tex}
+\fi
+\input{./chapters/Introduction.tex}
+\input{./chapters/MainPart.tex}
+\input{./chapters/Evaluation.tex}
+\input{./chapters/Discussion.tex}
+\input{./chapters/Conclusion.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APPENDIX
+\appendix
+\input{./chapters/Appendix.tex}
+% LIST OF FIGURES
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename} 
+\listoffigures 	
+% LIST OF FIGuRES
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename} 
+\listoftables	
+% ACRONYM & NOTATIONS
+% --> see include/gloss.tex
+\ifdefined\AddMyGloss
+    \AddMyGloss 
+\fi
+% BIBLIOGRAPHY
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{./refs/mybib}
+\bibliographystyle{alphaurl}
+% LICENSE 
+\cleardoublepage
+\chapter*{License}
+\markright{LICENSE}
+This work is licensed under the Creative Commons Attribution 3.0 Germany
+License. To view a copy of this license,
+visit \href{http://creativecommons.org/licenses/by/3.0/de/}{http://creativecommons.org} or send a letter
+to Creative Commons, 171 Second Street, Suite 300, San
+Francisco, California 94105, USA.
+% TODO LIST
+% this MUST be empty and/or removed in the final version of course!
+\listoftodos
+\end{document}

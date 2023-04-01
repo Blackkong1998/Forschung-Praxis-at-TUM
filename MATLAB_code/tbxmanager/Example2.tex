@@ -1,0 +1,141 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.50196,0.50196,0.50196}%
+\definecolor{mycolor2}{rgb}{0.92900,0.69400,0.12500}%
+\definecolor{mycolor3}{rgb}{0.30100,0.74500,0.93300}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=1.952in,
+height=1.528in,
+at={(0.758in,0.206in)},
+scale only axis,
+xmin=-0.5,
+xmax=11.5,
+xlabel style={font=\color{white!15!black}},
+xlabel={$x_1$},
+ymin=-5.5,
+ymax=11.5,
+ylabel style={font=\color{white!15!black}},
+ylabel={$x_2$},
+axis background/.style={fill=white},
+title={Iteration 4},
+axis x line*=bottom,
+axis y line*=left,
+xmajorgrids,
+ymajorgrids
+]
+
+\addplot[area legend, line width=1.0pt, draw=black, fill=mycolor1, fill opacity=0.05, forget plot]
+table[row sep=crcr] {%
+x	y\\
+1.4142135623731	10\\
+0	10\\
+}--cycle;
+\addplot [color=white, line width=2.0pt, forget plot]
+  table[row sep=crcr]{%
+1.4142135623731	10\\
+};
+\addplot [color=black, line width=1.5pt, forget plot]
+  table[row sep=crcr]{%
+1.4142135623731	10\\
+1.9142135623731	9.5\\
+};
+\addplot [color=black, only marks, mark size=2.5pt, mark=*, mark options={solid, black}, forget plot]
+  table[row sep=crcr]{%
+1.9142135623731	9.5\\
+};
+\addplot [color=mycolor2, only marks, mark=o, mark options={solid, mycolor2}, forget plot]
+  table[row sep=crcr]{%
+7.24	10\\
+7.74	9\\
+8.19	8\\
+};
+\addplot [color=red, only marks, mark=o, mark options={solid, red}, forget plot]
+  table[row sep=crcr]{%
+8.94	6\\
+9.24	5.05982732082783\\
+9.49299136604139	4.18553642952278\\
+9.70226818751753	3.37375497493582\\
+9.87095593626432	2.62124071990706\\
+};
+\addplot [color=black, only marks, mark=*, mark options={solid, fill=black, black}, forget plot]
+  table[row sep=crcr]{%
+8.59	7\\
+};
+\addplot [color=mycolor3, only marks, mark=x, mark options={solid, mycolor3}, forget plot]
+  table[row sep=crcr]{%
+0	0\\
+};
+\end{axis}
+
+\begin{axis}[%
+width=1.952in,
+height=1.528in,
+at={(3.327in,0.206in)},
+scale only axis,
+xmin=-0.5,
+xmax=11.5,
+xlabel style={font=\color{white!15!black}},
+xlabel={$x_1$},
+ymin=-5.5,
+ymax=11.5,
+ylabel style={font=\color{white!15!black}},
+ylabel={$x_2$},
+axis background/.style={fill=white},
+title={Iteration 5},
+axis x line*=bottom,
+axis y line*=left,
+xmajorgrids,
+ymajorgrids
+]
+
+\addplot[area legend, line width=1.0pt, draw=black, fill=mycolor1, fill opacity=0.05, forget plot]
+table[row sep=crcr] {%
+x	y\\
+1.4142135623731	10\\
+0	10\\
+}--cycle;
+\addplot [color=white, line width=2.0pt, forget plot]
+  table[row sep=crcr]{%
+1.4142135623731	10\\
+};
+\addplot [color=black, line width=1.5pt, forget plot]
+  table[row sep=crcr]{%
+1.4142135623731	10\\
+1.9142135623731	9.5\\
+};
+\addplot [color=black, only marks, mark size=2.5pt, mark=*, mark options={solid, black}, forget plot]
+  table[row sep=crcr]{%
+1.9142135623731	9.5\\
+};
+\addplot [color=mycolor2, only marks, mark=o, mark options={solid, mycolor2}, forget plot]
+  table[row sep=crcr]{%
+7.24	10\\
+7.74	9\\
+8.19	8\\
+8.59	7\\
+};
+\addplot [color=red, only marks, mark=o, mark options={solid, red}, forget plot]
+  table[row sep=crcr]{%
+9.24	5.05982732082783\\
+9.49299136604139	4.18553642952278\\
+9.70226818751753	3.37375497493582\\
+9.87095593626432	2.62124071990706\\
+10.0020179722597	1.92487850930687\\
+};
+\addplot [color=black, only marks, mark=*, mark options={solid, fill=black, black}, forget plot]
+  table[row sep=crcr]{%
+8.94	6\\
+};
+\addplot [color=mycolor3, only marks, mark=x, mark options={solid, mycolor3}, forget plot]
+  table[row sep=crcr]{%
+0	0\\
+};
+\end{axis}
+\end{tikzpicture}%

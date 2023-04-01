@@ -1,0 +1,29 @@
+%\chapter{Problem Setup}
+\section{Problem Setup}
+In the following we consider a continuous-time dynamical systems described by the following equation
+\begin{equation}
+	\dot{x} = f(x(t),u(t)),
+\end{equation}
+where $x(t)\in\mathbb{R}^m $ is the state and $u(t)\in\mathbb{R}^n$ is the control input.
+The MPC problem is defined as follows: determine the state $x_k \in \mathbb{R}^m$ and $u_k \in \mathbb{R}^n$ that solves the optimization problem
+\begin{equation}
+	\begin{split}
+	    \min \limits_{(x,u)} \sum_{k=i}^{i+N-1} l_k(x_k,u_k) &+ l_N(x_{k+N})\\
+	    s.t. \qquad \qquad  x_i - \bar{x_i} &= 0,\\
+	                x_{k+1}-f_k(x_k,u_k) &= 0,\\
+	                h_k(x_k,u_k)  &\leq 0,\\
+	                \forall k &\in [i, \cdots, i + N-1]   
+	\end{split}
+\end{equation}
+where $N$ is the control horizon, $l_k$ is the stage cost, $l_N$ is the terminal cost (a popular choice is the use of quadratic costs \cite{maciejowski2002predictive}). The parameter $\bar{x_i}$ is the fixed initial value, the function $f_k$ is the discrete-time version of (1), and the function $h_k$ describes state and control constraints. In order to solve (2) we need to find a method to discretize (1), thus allowing to solve a non-linear program (NLP) on the free variables (x,u).
+
+Particularly in this work, we assume a continuous time LTI system with the system matrices $A_{\rm {con}}$ and $B_{\rm {con}}$, the ODE of this system can be represented by the following equation
+\begin{equation}
+	\dot{x} = A_{\rm {con}}x + B_{\rm {con}}u,
+	\label{eq:ode}
+\end{equation}
+The discrete-time system can be expressed as
+\begin{equation}
+	x_{k+1} = A_{\rm{d}}x_k + B_{\rm{d}}u_k,
+\end{equation}
+

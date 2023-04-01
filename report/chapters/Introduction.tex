@@ -1,0 +1,15 @@
+%_________Einleitung__________________________________
+\chapter{Introduction}
+\label{sec:introduction}
+
+MPC is a control technique that uses models of the plant in order to predict the future behaviour of the system over a prediction horizon. Usually, these models are expressed mathematically as ordinary differential equations (ODE) \cite{sanchez2017mpc}. Applying MPC schemes to continuous time systems requires numerical
+discretization of the continuous time optimal control problem. Commonly used discretization approaches for MPC are based on RK methods. For the implementation in a sampled control loop, typically zero-order hold (ZOH), i.e., piecewise constant inputs between the sampling intervals are used. In applications where the continuous time model is exactly known and high accuracy control is required, a finer discretization grid or a higher order RK method can be chosen to decrease the
+approximation error of the discretization method, e.g., Gauss collocation \cite{kotyczka2021high} with appropriate higher-order hold elements.
+
+\section{Problem Statement}
+
+ The goal of this work is to derive a trade-off between prediction accuracy and computational complexity within an MPC scheme for continuous time linear systems. This is investigated by varying the granularity of numerical discretization and the order of RK methods, including the order of the hold element in the sampled control loop. In addition, the effects of the discretization approaches on the computation of reachable and invariant sets are also examined. Results from this work will enable similar investigations for the sampled control of continuous time nonlinear systems by MPC schemes.  In MPC, higher accuracy of the discretization leads to increased computational load as more decision variables are introduced to the optimal control problem, which can result in infeasible computation time.
+
+
+
+%____________________________________________________

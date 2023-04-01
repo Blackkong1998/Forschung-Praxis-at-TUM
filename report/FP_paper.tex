@@ -1,0 +1,69 @@
+% based on IEEE template, adapted by Tim Bruedigam and students
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\input{include/customize.tex}
+\input{./include/gloss.tex}		% add your glossary in this file 
+
+%\usepackage{cite}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{diagbox}
+%\usepackage[utf8]{inputenc}
+\newcommand{\chapter}{\section}
+%\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+%    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title / Student %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Numerical Discretization in High Accuracy MPC Applications
+}
+
+\author{\IEEEauthorblockN{Tianyuan Kong}
+\IEEEauthorblockA{\textit{Department of Electrical and Computer Engineering, Chair of Automatic Control Engineering (LSR)} \\
+\textit{Technical University of Munich}\\
+Munich, Germany\\
+ge23loy@tum.de}
+}
+
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+This work provides a comparative review of numerical methods generally used to discretize continuous-time linear system models appearing in Model Predictive Control (MPC) problems, i.e., Runge-Kutta (RK) methods and Gauss collocation. An overview of the characteristics of different RK methods, i.e. RK1, RK2, RK4, are given and the performance of each method is evaluated in a simulation example. Furthermore, we provide a discretization method based on Gauss collocation that allows to consider piecewise polynomial input functions within MPC, akin to higher-order hold elements.
+\end{abstract}
+
+\begin{IEEEkeywords}
+discretization methods, model predictive control, Runge-Kutta methods, Gauss collocation, real-time optimization
+\end{IEEEkeywords}
+
+
+\input{./chapters/Introduction.tex}
+\input{./chapters/Problem.tex}
+\input{./chapters/MainPart.tex}
+\input{./chapters/Evaluation.tex}
+\input{./chapters/Discussion.tex}
+\input{./chapters/Conclusion.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APPENDIX
+%\appendix
+\appendices
+
+%\input{./chapters/Appendix.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliography{refs/mybib}
+\bibliographystyle{ieeetr}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% List of Abrevations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

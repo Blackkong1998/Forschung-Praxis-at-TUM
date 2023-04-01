@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+% nodes
+\begin{pgfonlayer}{nodelayer}
+	\node[robotRec](head){};
+	\node[robotCirc, fill=white, minimum size=2pt, above=2pt of head.north](antennaBulb){};
+	\node[robotCirc, fill=white, minimum size=7pt](eyeL)at ($(head.135)!0.4!(head.225)$){};
+	\node[robotCirc, minimum size=1pt,scale=0.3](eyeLMid) at ($(head.135)!0.4!(head.225)$){};
+	\node[robotCirc, fill=white, minimum size=7pt](eyeR) at ($(head.45) !0.4!(head.315)$){};
+	\node[robotCirc, minimum size=1pt,scale=0.3](eyeRMid) at ($(head.45) !0.4!(head.315)$){};
+\end{pgfonlayer}
+
+% coordinate helpers
+\coordinate (mouth1)  at ($(head.130)!0.73!(head.230)$);
+\coordinate (mouth2)  at ($(head.50)!0.73!(head.310)$);
+\coordinate (tongue)  at ($(mouth1)!0.88!(mouth2)$);
+
+% edges (behind node layer)
+\begin{pgfonlayer}{edgelayer}
+	\draw[line width=3pt] (head.center) --  (antennaBulb.center) ;
+\end{pgfonlayer}
+
+% edges in foreground
+\begin{pgfonlayer}{foreground}
+	\draw[line width=2pt,line cap=round] (mouth1) --  (mouth2);
+	\draw[line width=1.5pt] (tongue) arc[draw, start angle=0, end angle=-180, x radius=4pt, y radius=3pt];
+\end{pgfonlayer}
+\end{tikzpicture}
