@@ -1,7 +1,7 @@
 # Forschung-Praxis-at-TUM
 Numerical Discretization in High Accuracy MPC Applications
 ## Abstract
-This work provides a comparative review of numerical methods generally used to discretize continuous-time linear
+This work provides a comparative review of numerical methods generally used to discretize continuous-time linear
 system models appearing in Model Predictive Control (MPC)
 problems, i.e., Runge-Kutta (RK) methods and Gauss collocation.
 An overview of the characteristics of different RK methods, i.e.
